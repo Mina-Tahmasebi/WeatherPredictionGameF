@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "AllRecords";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<GameRecordItem>
+<div class="text-center">
+    <h1 class="display-4">Welcome To Weather Game</h1>
+    <h3 style="float:left">All Recordes:</h3>
+</div>
+<br />
+<br />
+<br />
+<div>
+    <div className="panel-body ">
+        @{
+            foreach (var item in Model.OrderBy(h=>h.NumberOfTrueGuess/h.NumberOfCities))
+            {
+                <div class="col-lg-12">
+                    <h3>User Name:   @(item.UserName)</h3>
+                </div>
+                <div class="col-lg-12">
+                    <h3>City Names:    @(item.CityNames)</h3>
+                </div>
+
+                <div class="col-lg-12">
+                    <h3>Date:    @(item.Date)</h3>
+                </div>
+                <div class="col-lg-12">
+                    <h3>Number Of Cities:    @(item.NumberOfCities)</h3>
+                </div>
+                <div class="col-lg-12">
+                    <h3>Number Of True Guess:    @(item.NumberOfTrueGuess)</h3>
+                </div>
+                <br />
+                <br />
+            }
+        }
+
+    </div>
+</div>

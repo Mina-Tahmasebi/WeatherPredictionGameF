@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<CityDto>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To Weather Game</h1>
+</div>
+@using (Html.BeginForm())
+{
+    <div>
+        <h3>Please enter Your FullName:</h3>
+        <input type="text" value="" id="UserName" name="UserName" />
+    </div>
+    <br/>
+    <div>
+        <input value="Submit" type="submit" />
+    </div>
+}
+<div>
+    <p style="color:red">@ViewBag.Message</p>
+</div>
+
+
